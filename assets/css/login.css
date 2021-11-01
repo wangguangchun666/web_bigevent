@@ -1,0 +1,48 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("../images/login_bg.jpg") no-repeat center;
+  background-size: cover;
+}
+.layui-main {
+  height: 100%;
+  position: relative;
+}
+.loginAndRegBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 310px;
+  background-color: #fff;
+}
+.loginAndRegBox .title {
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+}
+.loginAndRegBox .reg-box {
+  display: none ;
+}
+.layui-form {
+  padding: 0 30px;
+}
+.layui-form a {
+  float: right;
+  font-size: 12px;
+}
+.layui-form .layui-form-item {
+  position: relative;
+}
+.layui-form .layui-form-item .layui-icon {
+  position: absolute;
+  top: 11px;
+  left: 10px;
+}
+.layui-form .layui-form-item input {
+  padding-left: 30px;
+}

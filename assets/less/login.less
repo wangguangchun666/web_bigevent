@@ -1,0 +1,57 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    // 这个center的作用是 将背景图片 垂直水平居中 再拉伸之后先是的比较居中
+    background: url("../images/login_bg.jpg") no-repeat center;
+    // cover是覆盖的意思 
+    background-size: cover;
+}
+
+.layui-main {
+    height: 100%;
+    position: relative;
+}
+
+.loginAndRegBox {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+
+    .title {
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        // 也可以用背景图片的方式 background: url("...") no-repeat center
+    }
+
+    //这里的超链接 无需另外设置样式 大概是因为 layUI自带的
+    .reg-box{
+        display: none ;
+    }
+}
+
+.layui-form{
+    padding: 0 30px;
+    a{
+        float: right;
+        font-size: 12px;
+    }
+    .layui-form-item{
+        position: relative;
+        .layui-icon{
+            position: absolute;
+            top: 11px;
+            left: 10px;
+        }
+        input{
+            padding-left: 30px;
+        }
+    }
+}
