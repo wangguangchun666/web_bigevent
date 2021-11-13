@@ -89,6 +89,8 @@ $('#form_login').submit(function (e) {
             layer.msg('登录成功')
             // 将登录成功的token 保存到本地
             localStorage.setItem("token",res.token)
+            
+
             // 跳转页面
             location.href = '/index.html';  
         }

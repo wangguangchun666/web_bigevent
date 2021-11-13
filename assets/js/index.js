@@ -8,15 +8,14 @@ window.onload = function () {
         url: "/my/userinfo",
         success: function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                
                 var res = JSON.parse(xhr.responseText)
-             
                 if (res.status == 0) {
                     // 正常登录
                     // 渲染用户信息
                     render_info(res.data);
 
                 } else if (res.status != 0) {
+                  
                     // 非法登录
                     disabled()
                 }
@@ -94,7 +93,7 @@ function disabled() {
         e.stopPropagation();
         e.preventDefault();
     }, true);
-    var time = 5;
+    var time = 50;
     //清空本地存储的token
     localStorage.removeItem('token');
     setInterval(function () {
@@ -131,12 +130,6 @@ function disabled() {
 //     }
 
 // }
-
-
-
-
-
-
 
 //利用jQuer发起的请求 
 // function getUser() {
