@@ -20,6 +20,7 @@ $(function () {
 // 从layUI中获取form对象
 var form = layui.form
 // 通过from.verify()函数定义校验规则
+// layui中自定义的校验规则 HTML属性上加上校验规则即可
 form.verify({
 
     // 自定义一个叫 pwd 校验规则
@@ -28,13 +29,13 @@ form.verify({
     // 用户名的验证
     usn: [/^[a-zA-Z][a-zA-Z0-9_]{4,15}$/, "字母开头，允许5-16字节，允许字母数字下划线"],
 
-    // 验证两次密码
+    // 验证两次密码   校验规则也可以是函数 
     // value 拿到的是使用校验规则的 密码框中的value值
     repwd: function (value) {
         // 通过形参拿到 确认密码框中的value
 
-        // 拿到确认密码框中的内容
-        var pwd = $('.reg-box #password').val();
+        // 拿到密码框中的内容
+        var pwd = $('.reg-box .password').val();
 
         // 进行一次判断
         if (pwd != value) {
@@ -49,14 +50,14 @@ form.verify({
 var layer = layui.layer
 // 监听注册表单事件
 $('#form_reg').on('submit', function (e) {
-    console.log("‘提交了");
+    // console.log("提交了");
     // 阻止表单默认提交行为
     e.preventDefault();
 
     // 通过Ajax发起请求
     var data = {
         username: $('#form_reg [name=username]').val(),
-        password: $('#form_reg #password').val()
+        password: $('#form_reg .password').val()
     }
     $.post('/api/reguser', data, function (res) {
         if (res.status != 0) {
@@ -89,7 +90,7 @@ $('#form_login').submit(function (e) {
             // 将登录成功的token 保存到本地
             localStorage.setItem("token",res.token)
             // 跳转页面
-            // location.href = '/index.html';
+            location.href = '/index.html';  
         }
        
     })

@@ -5,6 +5,33 @@
 $.ajaxPrefilter(function (options) {
     //在发起真正的Ajax之前 统一拼接请求的根路径
     // 这样我们就可以 在自己写的js中 直接使用接口即可
-    options.url = 'http://api-breakingnews-web.itheima.net'+options.url
-console.log( options.url);
+    options.url = 'http://api-breakingnews-web.itheima.net' + options.url
+
+
+    // 判断请求的接口是否需要权限
+    if (options.url.indexOf('/my') !== -1) {
+        //  统一为有权限的接口设置响应头
+        options.headers = {
+            Authorization: localStorage.getItem('token') || ""
+        }
+    }
+
+    // 全局统一挂载 complete函数 无论请求成功与否 都会执行这个回调函数
+
+    options.complete = function () {
+        // 这里面写 判断是否是非法登录
+        // 禁用页面的click事件
+        document.addEventListener("click", function handler(e) {
+            e.stopPropagation();
+            e.preventDefault();
+        }, true);
+        var time = 5;
+        //清空本地存储的token
+        localStorage.removeItem('token');
+        setInterval(function () {
+            (time == 0) ? location.href = '/login.html':
+                layer.msg(`获取用户信息失败,请联系管理员,页面将在${time--}秒后跳转`)
+        }, 1000)
+    }
+
 })
