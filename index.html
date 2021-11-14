@@ -28,15 +28,14 @@
       <ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item layui-hide layui-show-md-inline-block">
           <a href="javascript:;" class="userinfo">
-            <img src=""
-              class="layui-nav-img">
+            <img src="" class="layui-nav-img">
             <span class="text-image"></span>
             个人中心
           </a>
-          <dl class="layui-nav-child">
-            <dd><a href="">基本资料</a></dd>
-            <dd><a href="">更换头像</a></dd>
-            <dd><a href="">重置密码</a></dd>
+          <dl class="layui-nav-child top_dl" >
+            <dd><a href="./user/uesr_info.html" target='fm'>基本资料</a></dd>
+            <dd><a href="./user/user_avatar.html" target='fm'>更换头像</a></dd>
+            <dd><a href="./user/user_pwd.html" target="fm">重置密码</a></dd>
           </dl>
         </li>
         <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
@@ -59,7 +58,7 @@
         <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
         <ul class="layui-nav layui-nav-tree" lay-shrink="all">
 
-          <li class="layui-nav-item layui-this"><a href="./home/dashboard.html" target="fm"><span
+          <li class="layui-nav-item layui-this cc"><a href="./home/dashboard.html" target="fm"><span
                 class="iconfont ">&#xe6a9;</span>首页</a></li>
           <li class="layui-nav-item ">
             <a class="" href="javascript:;"> <span class="iconfont ">&#xe615;</span>文章管理</a>
@@ -71,19 +70,18 @@
           </li>
           <li class="layui-nav-item">
             <a href="javascript:;"><span class="iconfont ">&#xe614;</span>个人中心</a>
-            <dl class="layui-nav-child">
-              <dd><a href="javascript:;"><i class="layui-icon layui-icon-util"></i> 基本资料</a></dd>
-              <dd><a href="javascript:;"><i class="layui-icon layui-icon-util"></i> 更换头像</a></dd>
-              <dd><a href="javascript:;"><i class="layui-icon layui-icon-util"></i> 重置密码</a></dd>
+            <dl class="layui-nav-child left_dl" >
+              <dd><a href="./user/uesr_info.html" target='fm'><i class="layui-icon layui-icon-util"></i> 基本资料</a></dd>
+              <dd><a href="./user/user_avatar.html" target='fm'><i class="layui-icon layui-icon-util"></i> 更换头像</a></dd>
+              <dd><a href="./user/user_pwd.html" target="fm"><i class="layui-icon layui-icon-util"></i> 重置密码</a></dd>
             </dl>
           </li>
         </ul>
       </div>
     </div>
-
     <div class="layui-body">
       <!-- 内容主体区域 -->
-      <iframe name="fm" src="" frameborder=" 0"></iframe>
+      <iframe name="fm" src="./home/dashboard.html" frameborder=" 0"></iframe>
     </div>
 
     <div class="layui-footer">
