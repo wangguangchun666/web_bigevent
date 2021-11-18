@@ -1,5 +1,6 @@
 window.onload = function () {
-
+   // 禁用表单的输入记录
+   $("input").prop("autocomplete","off");
     // 1.1 获取裁剪区域的 DOM 元素
     var $image = $('#image')
     // 1.2 配置选项

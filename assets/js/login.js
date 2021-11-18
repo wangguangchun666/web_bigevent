@@ -1,6 +1,7 @@
 // 登录注册页面切换
 $(function () {
-
+   // 禁用表单的输入记录
+   $("input").prop("autocomplete","off");
     // 点击去注册
     $('#to_reg').on('click', function () {
         $('.login-box').hide();

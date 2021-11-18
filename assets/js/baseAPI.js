@@ -7,6 +7,7 @@ $.ajaxPrefilter(function (options) {
     // 这样我们就可以 在自己写的js中 直接使用接口即可
     options.url = 'http://api-breakingnews-web.itheima.net' + options.url;
 
+
     // 判断请求的接口是否需要权限
     if (options.url.indexOf('/my') !== -1) {
         //  统一为有权限的接口设置响应头

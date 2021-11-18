@@ -1,5 +1,6 @@
 window.onload = function () {
-
+   // 禁用表单的输入记录
+    $("input").prop("autocomplete","off");
     // 发起Ajax请求获取用户信息
     getUserInfo();
 

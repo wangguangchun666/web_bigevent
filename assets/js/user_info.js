@@ -1,11 +1,10 @@
 // jQuery入口函数
 $(function () {
-    
+       // 禁用表单的输入记录
+       $("input").prop("autocomplete","off");
     // 获取用户的信息
     initUserInfo();
-    submit()
-    // 禁用表单的输入记录
-    // $("input").prop("autocomplete","off");
+    submit();
 
     // 定义表单校验规则
     var form = layui.form
@@ -25,11 +24,8 @@ $(function () {
             // 请求头在baseApi在设置了
             // 请求成功调用的函数
             success: function (res) {
-                // console.log(res.data);
-                if (res.status == 0) {
-                    // $(".username").val(data.username);
-                    // $("#nickname").val(data.nickname);
-                    // $("#email").val(data.email);
+          
+                if (res.status == 0) { 
                     // 使用layui的方法 第一个值是 表单的lay-filter="user_info" 所对应的值
                     // 第二个值是所赋值的参数 是对象  不存在则是取值
                     form.val('user_info', res.data)

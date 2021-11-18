@@ -1,6 +1,8 @@
 window.onload = function () {
-    // 定义表单校验规则
+   // 禁用表单的输入记录
+   $("input").prop("autocomplete","off");
 
+    // 定义表单校验规则
     var form = layui.form;
     form.verify({
         // 自定义一个叫 pwd 校验规则
